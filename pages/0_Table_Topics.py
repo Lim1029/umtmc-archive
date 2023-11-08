@@ -12,7 +12,7 @@ st.set_page_config(page_title="Table Topics", page_icon="📹")
 st.markdown("# Table Topics")
 st.sidebar.header("Table Topics")
 
-conn = st.connection("gsheets", type=GSheetsConnection)
+conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 df = conn.read()
 df = df[df['Speech Type'] == 'Table Topics']
 df = df.drop('Speech Type',axis=1)

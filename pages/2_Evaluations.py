@@ -12,7 +12,7 @@ st.set_page_config(page_title="Evaluation", page_icon="📹")
 st.markdown("# Evaluation")
 st.sidebar.header("Evaluation")
 
-conn = st.connection("gsheets", type=GSheetsConnection)
+conn = st.experimental_connection("gsheets", type=GSheetsConnection)
 df = conn.read()
 df = df[df['Speech Type'] == 'Evaluation']
 df = df.drop('Speech Type',axis=1)
