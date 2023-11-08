@@ -11,3 +11,9 @@ import re
 st.set_page_config(page_title="Technical Reports", page_icon="📹")
 st.markdown("# Technical Reports")
 st.sidebar.header("Technical Reports")
+
+st.markdown("# For troubleshooting")
+conn = st.experimental_connection("gsheets", type=GSheetsConnection)
+df = conn.read()
+
+st.write(df)
